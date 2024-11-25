@@ -11,6 +11,10 @@ import Foundation
 enum Mood {
     case positive
     case negative
+    
+    var isPositive: Bool {
+        return self == .positive
+    }
 }
 
 struct LogEntry {

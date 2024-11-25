@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var vm = LogEntryViewModel()
+    
     var body: some View {
         TabView {
             Tab("Buster", systemImage: "hand.thumbsup") {
-                LogEntryView()
+                LogEntryView(vm: vm)
             }
             Tab("Stats", systemImage: "list.bullet.rectangle") {
                 StatsView()

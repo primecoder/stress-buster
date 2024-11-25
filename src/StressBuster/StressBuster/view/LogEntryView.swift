@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct LogEntryView: View {
+    @State var vm: LogEntryViewModel = .init()
+    
     var body: some View {
         VStack {
             Button {
-                print("Thumb up")
+                vm.addEntry(.positive)
             } label: {
                 Image(systemName: "hand.thumbsup.fill")
                     .resizable()
@@ -19,9 +21,10 @@ struct LogEntryView: View {
             }
             .tint(.black)
 
-            Spacer()
+            Text("Positive: \(vm.todayPositiveCount()), Negative: \(vm.todayNegativeCount())")
+            
             Button {
-                print("Thumb down")
+                vm.addEntry(.negative)
             } label: {
                 Image(systemName: "hand.thumbsdown.fill")
                     .resizable()
