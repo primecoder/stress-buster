@@ -12,6 +12,9 @@ class LogEntryViewModel {
     var logEntries: [LogEntry] = testEntries
     var moodStats: [Date: (positive: Int, negative: Int, ratio: Double)] = [:]
     
+    /// Add new mood entry with current time.
+    ///
+    /// For demonstration purpose, only date portions (day, month, year) are used.
     func addEntry(_ mood: Mood) {
         let dateComponents = Calendar.current.dateComponents(
             [.year, .month, .day],
@@ -23,12 +26,14 @@ class LogEntryViewModel {
         updateMoodStats()
     }
     
+    /// Count number of positive mood entiries for the current date.
     func todayPositiveCount() -> Int {
         logEntries
             .filter { Calendar.current.isDateInToday($0.date) && $0.mood.isPositive }
             .count
     }
     
+    /// Count number of negative mood entries for the current date.
     func todayNegativeCount() -> Int {
         logEntries
             .filter { Calendar.current.isDateInToday($0.date) && !$0.mood.isPositive }
@@ -36,7 +41,11 @@ class LogEntryViewModel {
     }
     
     func updateMoodStats() {
+        
+        // Clear mood stats, before update.
+        // This is destructive and expensive but ok for demo for now.
         moodStats.removeAll()
+        
         logEntries.forEach { logEntry in
             let (posCount, negCount, _) = moodStats[logEntry.date] ?? (0, 0, 0.0)
             let logEntryMoodPositive = logEntry.mood.isPositive ? 1 : 0

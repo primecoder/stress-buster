@@ -11,21 +11,11 @@ import AVFoundation
 struct LogEntryView: View {
     @State var vm: LogEntryViewModel = .init()
     
+    /// A calculated property showing ratio of positive vs negative entries.
     var todayPositiveRatio: Double {
-        let positiveCount = Double(vm.todayPositiveCount())
-        let negativeCount = Double(vm.todayNegativeCount())
-        let totalCount = Double(positiveCount + negativeCount)
-        
-        if positiveCount == negativeCount {
-            return 0.5
-        }
-        
-        if totalCount > 0 {
-            let ratio = Double(positiveCount / totalCount)
-            return ratio
-        } else {
-            return 0
-        }
+        let positiveCount = vm.todayPositiveCount()
+        let negativeCount = vm.todayNegativeCount()
+        return vm.calculatePositiveRatio(positive: positiveCount, negative: negativeCount)
     }
     
     @State private var thumbUpScale = 1.0
