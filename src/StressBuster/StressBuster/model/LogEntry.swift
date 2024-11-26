@@ -17,7 +17,9 @@ enum Mood {
     }
 }
 
-struct LogEntry {
+struct LogEntry: Identifiable {
+    let id: UUID = UUID()
     let date: Date
     let mood: Mood
 }
+

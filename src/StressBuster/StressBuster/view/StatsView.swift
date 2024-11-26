@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct StatsView: View {
+    @State var vm: LogEntryViewModel = .init()
+
     var body: some View {
-        Text("Stats View")
+        List {
+            ForEach(Array(vm.moodStats.keys.sorted(by: >)), id: \.self) { key in
+                Text("Date: \(key)")
+            }
+        }
+        .onAppear() {
+            vm.updateMoodStats()
+        }
     }
 }
 

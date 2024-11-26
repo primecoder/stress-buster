@@ -16,7 +16,7 @@ struct ContentView: View {
                 LogEntryView(vm: vm)
             }
             Tab("Stats", systemImage: "list.bullet.rectangle") {
-                StatsView()
+                StatsView(vm: vm)
             }
         }
     }
