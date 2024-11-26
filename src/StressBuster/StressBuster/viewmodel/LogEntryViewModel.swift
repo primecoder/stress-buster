@@ -10,10 +10,15 @@ import Foundation
 @Observable
 class LogEntryViewModel {
     var logEntries: [LogEntry] = testEntries
-    var moodStats: [Date: (positive: Int, negative: Int)] = [:]
+    var moodStats: [Date: (positive: Int, negative: Int, ratio: Double)] = [:]
     
     func addEntry(_ mood: Mood) {
-        let newEntry = LogEntry(date: .now, mood: mood)
+        let dateComponents = Calendar.current.dateComponents(
+            [.year, .month, .day],
+            from: .now
+        )
+        let dateForEntry = Calendar.current.date(from: dateComponents)!
+        let newEntry = LogEntry(date: dateForEntry, mood: mood)
         logEntries.append(newEntry)
         updateMoodStats()
     }
@@ -31,8 +36,19 @@ class LogEntryViewModel {
     }
     
     func updateMoodStats() {
-        moodStats = logEntries.reduce(into: [:]) { stats, entry in
-            stats[entry.date, default: (0, 0)] = (entry.mood.isPositive ? 1 : 0, entry.mood.isPositive ? 0 : 1)
+        moodStats.removeAll()
+        logEntries.forEach { logEntry in
+            let (posCount, negCount, _) = moodStats[logEntry.date] ?? (0, 0, 0.0)
+            let logEntryMoodPositive = logEntry.mood.isPositive ? 1 : 0
+            let logEntryMoodNegative = logEntry.mood.isPositive ? 0 : 1
+            moodStats[logEntry.date] = (
+                posCount + logEntryMoodPositive,
+                negCount + logEntryMoodNegative,
+                calculatePositiveRatio(
+                    positive: posCount + logEntryMoodPositive,
+                    negative: negCount + logEntryMoodNegative
+                )
+            )
         }
     }
 }
@@ -52,4 +68,11 @@ extension LogEntryViewModel {
         }
         return entries
     }()
+    
+    func calculatePositiveRatio(positive: Int, negative: Int) -> Double {
+        if (positive == negative) {
+            return 0.5
+        }
+        return Double(positive) / Double(positive + negative)
+    }
 }
