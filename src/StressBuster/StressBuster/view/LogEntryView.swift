@@ -10,6 +10,23 @@ import SwiftUI
 struct LogEntryView: View {
     @State var vm: LogEntryViewModel = .init()
     
+    var todayPositiveRatio: Double {
+        let positiveCount = Double(vm.todayPositiveCount())
+        let negativeCount = Double(vm.todayNegativeCount())
+        let totalCount = Double(positiveCount + negativeCount)
+        
+        if positiveCount == negativeCount {
+            return 0.5
+        }
+        
+        if totalCount > 0 {
+            let ratio = Double(positiveCount / totalCount)
+            return ratio
+        } else {
+            return 0
+        }
+    }
+    
     var body: some View {
         VStack {
             Button {
@@ -19,9 +36,10 @@ struct LogEntryView: View {
                     .resizable()
                     .padding(80)
             }
-            .tint(.black)
-
+            .tint(.green)
+            
             Text("Positive: \(vm.todayPositiveCount()), Negative: \(vm.todayNegativeCount())")
+            MoodScaleView(positiveRatio: todayPositiveRatio)
             
             Button {
                 vm.addEntry(.negative)
@@ -30,8 +48,9 @@ struct LogEntryView: View {
                     .resizable()
                     .padding(80)
             }
-            .tint(.black)
+            .tint(.red)
         }
+        .padding()
     }
 }
 
