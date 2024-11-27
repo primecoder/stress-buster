@@ -44,7 +44,7 @@ struct MoodScaleView: View {
         MoodScaleView(positiveRatio: 0.0)
         MoodScaleView(positiveRatio: 0.5)
         MoodScaleView(positiveRatio: 1.1)
-        MoodScaleView(positiveRatio: 0.25)
+        MoodScaleView(positiveRatio: 0.9)
     }
     .padding(.top, 100)
     .padding(.horizontal, 50)
