@@ -12,6 +12,7 @@ struct StressBusterApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }

@@ -14,6 +14,7 @@ struct ContentView: View {
         TabView {
             Tab("Buster", systemImage: "hand.thumbsup") {
                 LogEntryView(vm: vm)
+                    .edgesIgnoringSafeArea(.all)
             }
             Tab("Stats", systemImage: "list.bullet.rectangle") {
                 StatsView(vm: vm)
@@ -24,4 +25,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .edgesIgnoringSafeArea(.all)
 }

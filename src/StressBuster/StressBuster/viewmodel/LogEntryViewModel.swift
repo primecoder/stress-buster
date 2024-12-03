@@ -65,7 +65,7 @@ class LogEntryViewModel {
 extension LogEntryViewModel {
     static var testEntries: [LogEntry] = {
         var entries: [LogEntry] = []
-        for i in 0..<10 {
+        for i in 1..<10 {
             let date = Calendar.current.date(byAdding: .day, value: -i, to: .now)!
             for hour in 0..<24 {
                 let randomMood: Mood = Int.random(in: 1..<100) > 50 ? .negative : .positive
