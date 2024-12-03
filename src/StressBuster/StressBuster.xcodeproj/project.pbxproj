@@ -6,19 +6,78 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		50B18BD82CF7D35200739B85 /* StressBusterWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50B18BD62CF7D35200739B85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50F8C47E2CF43E2200949924 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50B18BCA2CF7D35000739B85;
+			remoteInfo = "StressBusterWatchApp Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		50B18BDC2CF7D35200739B85 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				50B18BD82CF7D35200739B85 /* StressBusterWatchApp Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StressBusterWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F8C4862CF43E2200949924 /* StressBuster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StressBuster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		50B18BDE2CF921BB00739B85 /* Exceptions for "StressBuster" folder in "StressBusterWatchApp Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				model/LogEntry.swift,
+				view/ContentView.swift,
+				view/LogEntryView.swift,
+				view/MoodScaleView.swift,
+				view/StatsView.swift,
+				viewmodel/LogEntryViewModel.swift,
+			);
+			target = 50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		50B18BCC2CF7D35000739B85 /* StressBusterWatchApp Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "StressBusterWatchApp Watch App";
+			sourceTree = "<group>";
+		};
 		50F8C4882CF43E2200949924 /* StressBuster */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50B18BDE2CF921BB00739B85 /* Exceptions for "StressBuster" folder in "StressBusterWatchApp Watch App" target */,
+			);
 			path = StressBuster;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		50B18BC82CF7D35000739B85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50F8C4832CF43E2200949924 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				50F8C4882CF43E2200949924 /* StressBuster */,
+				50B18BCC2CF7D35000739B85 /* StressBusterWatchApp Watch App */,
 				50F8C4872CF43E2200949924 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				50F8C4862CF43E2200949924 /* StressBuster.app */,
+				50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +109,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50B18BD92CF7D35200739B85 /* Build configuration list for PBXNativeTarget "StressBusterWatchApp Watch App" */;
+			buildPhases = (
+				50B18BC72CF7D35000739B85 /* Sources */,
+				50B18BC82CF7D35000739B85 /* Frameworks */,
+				50B18BC92CF7D35000739B85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				50B18BCC2CF7D35000739B85 /* StressBusterWatchApp Watch App */,
+			);
+			name = "StressBusterWatchApp Watch App";
+			packageProductDependencies = (
+			);
+			productName = "StressBusterWatchApp Watch App";
+			productReference = 50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		50F8C4852CF43E2200949924 /* StressBuster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50F8C4952CF43E2400949924 /* Build configuration list for PBXNativeTarget "StressBuster" */;
@@ -55,10 +138,12 @@
 				50F8C4822CF43E2200949924 /* Sources */,
 				50F8C4832CF43E2200949924 /* Frameworks */,
 				50F8C4842CF43E2200949924 /* Resources */,
+				50B18BDC2CF7D35200739B85 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				50B18BD72CF7D35200739B85 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				50F8C4882CF43E2200949924 /* StressBuster */,
@@ -80,6 +165,9 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
+					50B18BCA2CF7D35000739B85 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 					50F8C4852CF43E2200949924 = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -100,11 +188,19 @@
 			projectRoot = "";
 			targets = (
 				50F8C4852CF43E2200949924 /* StressBuster */,
+				50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		50B18BC92CF7D35000739B85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50F8C4842CF43E2200949924 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +211,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		50B18BC72CF7D35000739B85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50F8C4822CF43E2200949924 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +227,76 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		50B18BD72CF7D35200739B85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */;
+			targetProxy = 50B18BD62CF7D35200739B85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		50B18BDA2CF7D35200739B85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StressBusterWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = Z6UU7WL5HP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = StressBusterWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "au.edu.rmit.sct-afh.StressBuster2";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "au.edu.rmit.sct-afh.StressBuster2.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.1;
+			};
+			name = Debug;
+		};
+		50B18BDB2CF7D35200739B85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StressBusterWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = Z6UU7WL5HP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = StressBusterWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "au.edu.rmit.sct-afh.StressBuster2";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "au.edu.rmit.sct-afh.StressBuster2.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.1;
+			};
+			name = Release;
+		};
 		50F8C4932CF43E2400949924 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -320,6 +492,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		50B18BD92CF7D35200739B85 /* Build configuration list for PBXNativeTarget "StressBusterWatchApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B18BDA2CF7D35200739B85 /* Debug */,
+				50B18BDB2CF7D35200739B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		50F8C4812CF43E2200949924 /* Build configuration list for PBXProject "StressBuster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

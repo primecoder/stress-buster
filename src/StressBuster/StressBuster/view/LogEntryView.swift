@@ -27,7 +27,9 @@ struct LogEntryView: View {
                 vm.addEntry(.positive)
                 // For list of sounds see:
                 // https://github.com/TUNER88/iOSSystemSoundsLibrary
+#if os(iOS)
                 AudioServicesPlaySystemSound(1033)
+#endif
                 withAnimation(.bouncy(duration: 0.2)) {
                     thumbUpScale = 1.5
                 } completion: {
@@ -46,7 +48,9 @@ struct LogEntryView: View {
             
             Button {
                 vm.addEntry(.negative)
+#if os(iOS)
                 AudioServicesPlaySystemSound(1006)
+#endif
                 withAnimation(.bouncy(duration: 0.2)) {
                     thumbDownScale = 1.5
                 } completion: {
