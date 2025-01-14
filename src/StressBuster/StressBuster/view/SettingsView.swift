@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State var vm: LogEntryViewModel = .init()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Toggle("Enable click sound",
+                   isOn: $vm.settingsClickSoundEnabled)
+        }
+        .padding()
     }
 }
 

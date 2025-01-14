@@ -19,6 +19,9 @@ struct ContentView: View {
             Tab("Stats", systemImage: "list.bullet.rectangle") {
                 StatsView(vm: vm)
             }
+            Tab("Settings", systemImage: "gearshape.2") {
+                SettingsView(vm: vm)
+            }
         }
     }
 }

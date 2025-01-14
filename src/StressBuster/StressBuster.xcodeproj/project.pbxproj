@@ -47,6 +47,7 @@
 				view/ContentView.swift,
 				view/LogEntryView.swift,
 				view/MoodScaleView.swift,
+				view/SettingsView.swift,
 				view/StatsView.swift,
 				viewmodel/LogEntryViewModel.swift,
 			);

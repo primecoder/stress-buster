@@ -12,6 +12,16 @@ class LogEntryViewModel {
     var logEntries: [LogEntry] = testEntries
     var moodStats: [Date: (positive: Int, negative: Int, ratio: Double)] = [:]
     
+    var settingsClickSoundEnabled: Bool = false {
+        didSet {
+            UserDefaults.standard.set(settingsClickSoundEnabled, forKey: "clickSoundEnabled")
+        }
+    }
+    
+    init() {
+        settingsClickSoundEnabled = UserDefaults.standard.bool(forKey: "clickSoundEnabled")
+    }
+    
     /// Add new mood entry with current time.
     ///
     /// For demonstration purpose, only date portions (day, month, year) are used.
