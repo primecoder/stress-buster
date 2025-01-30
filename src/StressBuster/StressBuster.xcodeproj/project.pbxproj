@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50B18BD82CF7D35200739B85 /* StressBusterWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50B18BD82CF7D35200739B85 /* StressBusterWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +231,7 @@
 /* Begin PBXTargetDependency section */
 		50B18BD72CF7D35200739B85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */;
 			targetProxy = 50B18BD62CF7D35200739B85 /* PBXContainerItemProxy */;
 		};
