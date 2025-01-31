@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 class LogEntryViewModel {
-    var logEntries: [LogEntry] = testEntries
+    var logEntries: [LogEntry] = blank
     var moodStats: [Date: (positive: Int, negative: Int, ratio: Double)] = [:]
     
     var settingsClickSoundEnabled: Bool = false {
@@ -73,6 +73,8 @@ class LogEntryViewModel {
 }
 
 extension LogEntryViewModel {
+    static var blank: [LogEntry] = []
+    
     static var testEntries: [LogEntry] = {
         var entries: [LogEntry] = []
         for i in 1..<10 {

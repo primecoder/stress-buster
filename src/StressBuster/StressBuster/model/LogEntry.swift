@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
-
-enum Mood {
+enum Mood: Codable {
     case positive
     case negative
     
@@ -17,9 +17,16 @@ enum Mood {
     }
 }
 
-struct LogEntry: Identifiable {
-    let id: UUID = UUID()
-    let date: Date
-    let mood: Mood
+@Model
+class LogEntry: Identifiable {
+    var id: UUID
+    var date: Date
+    var mood: Mood
+    
+    init(id: UUID = UUID(), date: Date, mood: Mood) {
+        self.id = id
+        self.date = date
+        self.mood = mood
+    }
 }
 
