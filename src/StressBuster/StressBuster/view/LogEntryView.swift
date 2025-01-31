@@ -8,10 +8,6 @@
 import SwiftUI
 import AVFoundation
 
-#if os(watchOS)
-import WatchKit
-#endif
-
 struct LogEntryView: View {
     @State var vm: LogEntryViewModel = .init()
     
@@ -55,18 +51,13 @@ struct LogEntryView: View {
                             .frame(height: geometry.size.height * (1 - todayPositiveRatio),
                                    alignment: .topTrailing)
                     }
-                    .frame(maxWidth: .infinity)
                 }
+                .clipped()
+                
                 VStack(alignment: .center) {
                     Button {
                         vm.addEntry(.positive)
-                        // For list of sounds see:
-                        // https://github.com/TUNER88/iOSSystemSoundsLibrary
-#if os(iOS)
-                        AudioServicesPlaySystemSound(1033)
-#elseif os(watchOS)
-                        WKInterfaceDevice.current().play(.success)
-#endif
+                        sysSound(.positive, soundEnabled: vm.settingsClickSoundEnabled)
                         withAnimation(.bouncy(duration: 0.1)) {
                             thumbUpScale = 1.5
                         } completion: {
@@ -85,11 +76,7 @@ struct LogEntryView: View {
                     
                     Button {
                         vm.addEntry(.negative)
-#if os(iOS)
-                        AudioServicesPlaySystemSound(1006)
-#elseif os(watchOS)
-                        WKInterfaceDevice.current().play(.failure)
-#endif
+                        sysSound(.negative, soundEnabled: vm.settingsClickSoundEnabled)
                         withAnimation(.bouncy(duration: 0.1)) {
                             thumbDownScale = 1.5
                         } completion: {
@@ -116,5 +103,4 @@ struct LogEntryView: View {
 
 #Preview {
     LogEntryView()
-        .edgesIgnoringSafeArea(.all)
 }
