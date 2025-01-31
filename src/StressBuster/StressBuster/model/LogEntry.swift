@@ -19,7 +19,7 @@ enum Mood: Codable {
 
 @Model
 class LogEntry: Identifiable {
-    var id: UUID
+    @Attribute(.unique) var id: UUID
     var date: Date
     var mood: Mood
     

@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import SwiftData
+
 
 @Observable
 class LogEntryViewModel {
+    private let container = try? ModelContainer(for: LogEntry.self)
+
+    @MainActor
     var logEntries: [LogEntry] = blank
     var moodStats: [Date: (positive: Int, negative: Int, ratio: Double)] = [:]
     
@@ -18,13 +23,23 @@ class LogEntryViewModel {
         }
     }
     
+    @MainActor
     init() {
         settingsClickSoundEnabled = UserDefaults.standard.bool(forKey: "clickSoundEnabled")
+        
+        if let container = container {
+            if let fetchedEntries = try? container.mainContext.fetch(
+                FetchDescriptor<LogEntry>()
+            ) {
+                logEntries = fetchedEntries
+            }
+        }
     }
     
     /// Add new mood entry with current time.
     ///
     /// For demonstration purpose, only date portions (day, month, year) are used.
+    @MainActor
     func addEntry(_ mood: Mood) {
         let dateComponents = Calendar.current.dateComponents(
             [.year, .month, .day],
@@ -33,10 +48,19 @@ class LogEntryViewModel {
         let dateForEntry = Calendar.current.date(from: dateComponents)!
         let newEntry = LogEntry(date: dateForEntry, mood: mood)
         logEntries.append(newEntry)
+        if let container = container {
+            container.mainContext.insert(newEntry)
+            do {
+                try container.mainContext.save()
+            } catch {
+                print("ERROR> saving log entry: \(error)")
+            }
+        }
         updateMoodStats()
     }
     
     /// Count number of positive mood entiries for the current date.
+    @MainActor
     func todayPositiveCount() -> Int {
         logEntries
             .filter { Calendar.current.isDateInToday($0.date) && $0.mood.isPositive }
@@ -44,12 +68,14 @@ class LogEntryViewModel {
     }
     
     /// Count number of negative mood entries for the current date.
+    @MainActor
     func todayNegativeCount() -> Int {
         logEntries
             .filter { Calendar.current.isDateInToday($0.date) && !$0.mood.isPositive }
             .count
     }
     
+    @MainActor
     func updateMoodStats() {
         
         // Clear mood stats, before update.
@@ -73,9 +99,9 @@ class LogEntryViewModel {
 }
 
 extension LogEntryViewModel {
-    static var blank: [LogEntry] = []
+    @MainActor static let blank: [LogEntry] = []
     
-    static var testEntries: [LogEntry] = {
+    @MainActor static let testEntries: [LogEntry] = {
         var entries: [LogEntry] = []
         for i in 1..<10 {
             let date = Calendar.current.date(byAdding: .day, value: -i, to: .now)!
