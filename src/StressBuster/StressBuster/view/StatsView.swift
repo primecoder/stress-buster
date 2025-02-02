@@ -25,9 +25,9 @@ struct StatsView: View {
                     ZStack {
                         MoodScaleView(positiveRatio: mood.ratio, scaleHeight: 20)
                         HStack {
-                            Text("\(mood.positive)")
-                            Spacer()
                             Text("\(mood.negative)")
+                            Spacer()
+                            Text("\(mood.positive)")
                         }
                         .padding(.horizontal, 8)
                     }
