@@ -5,7 +5,7 @@
 //  Created by ace on 25/11/2024.
 //
 
-import SwiftUI // Ace's changed really
+import SwiftUI
 
 struct StatsView: View {
     @State var vm: LogEntryViewModel = .init()
