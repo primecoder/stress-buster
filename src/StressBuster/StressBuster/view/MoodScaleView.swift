@@ -24,7 +24,7 @@ struct MoodScaleView: View {
             HStack(spacing: 0) {
                 Rectangle()
                     .frame(height: scaleHeight)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(.orange)
                     .frame(
                         width: geometry.size.width - (geometry.size.width * guardPositiveRatio),
                         height: scaleHeight
