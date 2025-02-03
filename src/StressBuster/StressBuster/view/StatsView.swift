@@ -5,7 +5,7 @@
 //  Created by ace on 25/11/2024.
 //
 
-import SwiftUI
+import SwiftUI /// steph changes
 
 struct StatsView: View {
     @State var vm: LogEntryViewModel = .init()
@@ -29,6 +29,7 @@ struct StatsView: View {
                             Spacer()
                             Text("\(mood.positive)")
                                 .font(.largeTitle)
+                                .foregroundStyle(.green)
                         }
                         .padding(.horizontal, 8)
                     }
