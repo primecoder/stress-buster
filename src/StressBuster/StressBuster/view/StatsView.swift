@@ -28,6 +28,7 @@ struct StatsView: View {
                             Text("\(mood.negative)")
                             Spacer()
                             Text("\(mood.positive)")
+                                .font(.largeTitle)
                         }
                         .padding(.horizontal, 8)
                     }
