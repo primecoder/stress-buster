@@ -7,27 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50B18BD82CF7D35200739B85 /* StressBusterWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50BE83762D51B53400BE47E7 /* QuickMoodLogger.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 50BE83672D51B53300BE47E7 /* QuickMoodLogger.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		50B18BD62CF7D35200739B85 /* PBXContainerItemProxy */ = {
+		50BE83742D51B53400BE47E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 50F8C47E2CF43E2200949924 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 50B18BCA2CF7D35000739B85;
-			remoteInfo = "StressBusterWatchApp Watch App";
+			remoteGlobalIDString = 50BE83662D51B53300BE47E7;
+			remoteInfo = QuickMoodLogger;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		50264E782D51ABCC008EFE54 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				50BE83762D51B53400BE47E7 /* QuickMoodLogger.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50B18BDC2CF7D35200739B85 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				50B18BD82CF7D35200739B85 /* StressBusterWatchApp Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StressBusterWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50BE83672D51B53300BE47E7 /* QuickMoodLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickMoodLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F8C4862CF43E2200949924 /* StressBuster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StressBuster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,6 +65,24 @@
 			);
 			target = 50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */;
 		};
+		50BE83772D51B53400BE47E7 /* Exceptions for "QuickMoodLogger" folder in "QuickMoodLogger" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 50BE83662D51B53300BE47E7 /* QuickMoodLogger */;
+		};
+		50BE837C2D51B5E000BE47E7 /* Exceptions for "StressBuster" folder in "QuickMoodLogger" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				model/LogEntry.swift,
+				utils/SysSound.swift,
+				view/LogEntryView.swift,
+				view/MoodScaleView.swift,
+				viewmodel/LogEntryViewModel.swift,
+			);
+			target = 50BE83662D51B53300BE47E7 /* QuickMoodLogger */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -62,10 +91,19 @@
 			path = "StressBusterWatchApp Watch App";
 			sourceTree = "<group>";
 		};
+		50BE83682D51B53300BE47E7 /* QuickMoodLogger */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50BE83772D51B53400BE47E7 /* Exceptions for "QuickMoodLogger" folder in "QuickMoodLogger" target */,
+			);
+			path = QuickMoodLogger;
+			sourceTree = "<group>";
+		};
 		50F8C4882CF43E2200949924 /* StressBuster */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				50B18BDE2CF921BB00739B85 /* Exceptions for "StressBuster" folder in "StressBusterWatchApp Watch App" target */,
+				50BE837C2D51B5E000BE47E7 /* Exceptions for "StressBuster" folder in "QuickMoodLogger" target */,
 			);
 			path = StressBuster;
 			sourceTree = "<group>";
@@ -74,6 +112,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		50B18BC82CF7D35000739B85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50BE83642D51B53300BE47E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,11 +135,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		500881CC2D51B266005B43E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50F8C47D2CF43E2200949924 = {
 			isa = PBXGroup;
 			children = (
 				50F8C4882CF43E2200949924 /* StressBuster */,
 				50B18BCC2CF7D35000739B85 /* StressBusterWatchApp Watch App */,
+				50BE83682D51B53300BE47E7 /* QuickMoodLogger */,
+				500881CC2D51B266005B43E1 /* Frameworks */,
 				50F8C4872CF43E2200949924 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +158,7 @@
 			children = (
 				50F8C4862CF43E2200949924 /* StressBuster.app */,
 				50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */,
+				50BE83672D51B53300BE47E7 /* QuickMoodLogger.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +188,28 @@
 			productReference = 50B18BCB2CF7D35000739B85 /* StressBusterWatchApp Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		50BE83662D51B53300BE47E7 /* QuickMoodLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50BE83782D51B53400BE47E7 /* Build configuration list for PBXNativeTarget "QuickMoodLogger" */;
+			buildPhases = (
+				50BE83632D51B53300BE47E7 /* Sources */,
+				50BE83642D51B53300BE47E7 /* Frameworks */,
+				50BE83652D51B53300BE47E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				50BE83682D51B53300BE47E7 /* QuickMoodLogger */,
+			);
+			name = QuickMoodLogger;
+			packageProductDependencies = (
+			);
+			productName = QuickMoodLogger;
+			productReference = 50BE83672D51B53300BE47E7 /* QuickMoodLogger.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		50F8C4852CF43E2200949924 /* StressBuster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50F8C4952CF43E2400949924 /* Build configuration list for PBXNativeTarget "StressBuster" */;
@@ -141,11 +218,12 @@
 				50F8C4832CF43E2200949924 /* Frameworks */,
 				50F8C4842CF43E2200949924 /* Resources */,
 				50B18BDC2CF7D35200739B85 /* Embed Watch Content */,
+				50264E782D51ABCC008EFE54 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				50B18BD72CF7D35200739B85 /* PBXTargetDependency */,
+				50BE83752D51B53400BE47E7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				50F8C4882CF43E2200949924 /* StressBuster */,
@@ -164,11 +242,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					50B18BCA2CF7D35000739B85 = {
 						CreatedOnToolsVersion = 16.1;
+					};
+					50BE83662D51B53300BE47E7 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 					50F8C4852CF43E2200949924 = {
 						CreatedOnToolsVersion = 16.1;
@@ -191,12 +272,20 @@
 			targets = (
 				50F8C4852CF43E2200949924 /* StressBuster */,
 				50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */,
+				50BE83662D51B53300BE47E7 /* QuickMoodLogger */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		50B18BC92CF7D35000739B85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50BE83652D51B53300BE47E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,6 +309,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50BE83632D51B53300BE47E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50F8C4822CF43E2200949924 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,11 +326,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		50B18BD72CF7D35200739B85 /* PBXTargetDependency */ = {
+		50BE83752D51B53400BE47E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */;
-			targetProxy = 50B18BD62CF7D35200739B85 /* PBXContainerItemProxy */;
+			target = 50BE83662D51B53300BE47E7 /* QuickMoodLogger */;
+			targetProxy = 50BE83742D51B53400BE47E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -252,13 +347,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = StressBusterWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "au.edu.rmit.sct-afh.StressBuster2";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "authors-ace.research.stressbuster";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "au.edu.rmit.sct-afh.StressBuster2.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "authors-ace.research.stressbuster.watchapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -282,13 +377,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = StressBusterWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "au.edu.rmit.sct-afh.StressBuster2";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "authors-ace.research.stressbuster";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "au.edu.rmit.sct-afh.StressBuster2.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "authors-ace.research.stressbuster.watchapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -297,6 +392,75 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 11.1;
+			};
+			name = Release;
+		};
+		50BE83792D51B53400BE47E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuickMoodLogger/QuickMoodLogger.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"QuickMoodLogger/Preview Content\"";
+				DEVELOPMENT_TEAM = Z6UU7WL5HP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickMoodLogger/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StressBuster;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "authors-ace.research.stressbuster.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50BE837A2D51B53400BE47E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuickMoodLogger/QuickMoodLogger.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"QuickMoodLogger/Preview Content\"";
+				DEVELOPMENT_TEAM = Z6UU7WL5HP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickMoodLogger/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StressBuster;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "authors-ace.research.stressbuster.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -445,7 +609,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "au.edu.rmit.sct-afh.StressBuster2";
+				PRODUCT_BUNDLE_IDENTIFIER = "authors-ace.research.stressbuster";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -485,7 +649,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "au.edu.rmit.sct-afh.StressBuster2";
+				PRODUCT_BUNDLE_IDENTIFIER = "authors-ace.research.stressbuster";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -504,6 +668,15 @@
 			buildConfigurations = (
 				50B18BDA2CF7D35200739B85 /* Debug */,
 				50B18BDB2CF7D35200739B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50BE83782D51B53400BE47E7 /* Build configuration list for PBXNativeTarget "QuickMoodLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50BE83792D51B53400BE47E7 /* Debug */,
+				50BE837A2D51B53400BE47E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
