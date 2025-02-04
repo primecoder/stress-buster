@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50BE83762D51B53400BE47E7 /* QuickMoodLogger.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 50BE83672D51B53300BE47E7 /* QuickMoodLogger.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50BE83762D51B53400BE47E7 /* QuickMoodLogger.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 50BE83672D51B53300BE47E7 /* QuickMoodLogger.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +83,13 @@
 			);
 			target = 50BE83662D51B53300BE47E7 /* QuickMoodLogger */;
 		};
+		50BE83862D51BB8900BE47E7 /* Exceptions for "StressBuster" folder in "StressBuster" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 50F8C4852CF43E2200949924 /* StressBuster */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -102,6 +109,7 @@
 		50F8C4882CF43E2200949924 /* StressBuster */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				50BE83862D51BB8900BE47E7 /* Exceptions for "StressBuster" folder in "StressBuster" target */,
 				50B18BDE2CF921BB00739B85 /* Exceptions for "StressBuster" folder in "StressBusterWatchApp Watch App" target */,
 				50BE837C2D51B5E000BE47E7 /* Exceptions for "StressBuster" folder in "QuickMoodLogger" target */,
 			);
@@ -328,6 +336,7 @@
 /* Begin PBXTargetDependency section */
 		50BE83752D51B53400BE47E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 50BE83662D51B53300BE47E7 /* QuickMoodLogger */;
 			targetProxy = 50BE83742D51B53400BE47E7 /* PBXContainerItemProxy */;
 		};
@@ -339,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "StressBusterWatchApp Watch App/StressBusterWatchApp Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StressBusterWatchApp Watch App/Preview Content\"";
@@ -369,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "StressBusterWatchApp Watch App/StressBusterWatchApp Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StressBusterWatchApp Watch App/Preview Content\"";
@@ -594,6 +605,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StressBuster/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -634,6 +646,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StressBuster/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
