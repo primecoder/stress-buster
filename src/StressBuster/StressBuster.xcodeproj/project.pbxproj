@@ -90,11 +90,21 @@
 			);
 			target = 50F8C4852CF43E2200949924 /* StressBuster */;
 		};
+		50BE83882D51CF8300BE47E7 /* Exceptions for "StressBusterWatchApp Watch App" folder in "StressBusterWatchApp Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"StressBusterWatchApp-Watch-App-Info.plist",
+			);
+			target = 50B18BCA2CF7D35000739B85 /* StressBusterWatchApp Watch App */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		50B18BCC2CF7D35000739B85 /* StressBusterWatchApp Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50BE83882D51CF8300BE47E7 /* Exceptions for "StressBusterWatchApp Watch App" folder in "StressBusterWatchApp Watch App" target */,
+			);
 			path = "StressBusterWatchApp Watch App";
 			sourceTree = "<group>";
 		};
@@ -355,6 +365,7 @@
 				DEVELOPMENT_TEAM = Z6UU7WL5HP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StressBusterWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = StressBusterWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "authors-ace.research.stressbuster";
@@ -386,6 +397,7 @@
 				DEVELOPMENT_TEAM = Z6UU7WL5HP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StressBusterWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = StressBusterWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "authors-ace.research.stressbuster";

@@ -76,6 +76,18 @@ class LogEntryViewModel {
     }
     
     @MainActor
+    func reloadData() {
+        if let container = container {
+            if let fetchedEntries = try? container.mainContext.fetch(
+                FetchDescriptor<LogEntry>()
+            ) {
+                logEntries = fetchedEntries
+            }
+        }
+        updateMoodStats()
+    }
+    
+    @MainActor
     func updateMoodStats() {
         
         // Clear mood stats, before update.

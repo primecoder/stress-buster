@@ -75,6 +75,12 @@ struct LogEntryView: View {
                            height: geometry.size.width * 0.5)
                     
                     Button {
+                        vm.reloadData()
+                    } label: {
+                        Text("Reload")
+                    }
+                    
+                    Button {
                         vm.addEntry(.negative)
                         sysSound(.negative, soundEnabled: vm.settingsClickSoundEnabled)
                         withAnimation(.bouncy(duration: 0.1)) {
